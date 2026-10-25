@@ -1,0 +1,16 @@
+name: fx104 GH50 read access
+run-name: ${{ inputs.helio_execution_id }}
+on:
+  workflow_dispatch:
+    inputs:
+      environment: {required: false, type: string}
+      helio_execution_id: {required: false, type: string}
+      helio_release_id: {required: false, type: string}
+      workflow_revision: {required: false, type: string}
+      release_version: {required: false, type: string}
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: fx104-gh50-review
+    steps:
+      - run: echo "Owned GH50 read-access fixture (gh-lanes-20261024); nothing is deployed"
